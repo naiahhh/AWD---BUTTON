@@ -12,7 +12,7 @@ function animateBox(day) {
 
     // Reset any previous animation
     box.style.opacity = '0';
-    box.style.top = '-150px';
+    box.style.top = '-450px';
     box.removeAttribute('class');
 
     // Delay to allow the box to reset its position
@@ -20,7 +20,7 @@ function animateBox(day) {
         box.classList.add(day.toLowerCase());
         box.style.opacity = '1';
         box.style.top = '320px'; // Move down
-    }, 800); // Small delay to ensure the reset of position is rendered
+    }, 650); // Small delay to ensure the reset of position is rendered
 }
 
 button1.addEventListener('click', function() {
