@@ -8,39 +8,21 @@ var button7 = document.getElementById('button7');
 
 var box = document.getElementById('animated-box');
 
-function animateBox(day) {
+function animateBox(backgroundColor, borderColor) {
+    box.style.top = '-150px';
 
-    // Reset any previous animation
-    box.style.opacity = '0';
-    box.style.top = '-450px';
-    box.removeAttribute('class');
 
-    // Delay to allow the box to reset its position
     setTimeout(function() {
-        box.classList.add(day.toLowerCase());
-        box.style.opacity = '1';
-        box.style.top = '320px'; // Move down
-    }, 650); // Small delay to ensure the reset of position is rendered
+        box.style.backgroundColor = backgroundColor; 
+        box.style.borderColor = borderColor; 
+        box.style.top = '320px';
+    }, 800); 
 }
 
-button1.addEventListener('click', function() {
-    box.style.backgroundColor = '#3498db';
-});
-button2.addEventListener('click', function() {
-    box.style.backgroundColor = '#e74c3c';
-});
-button3.addEventListener('click', function() {
-    box.style.backgroundColor = '#2ecc71';
-});
-button4.addEventListener('click', function() {
-    box.style.backgroundColor = '#f39c12';
-});
-button5.addEventListener('click', function() {
-    box.style.backgroundColor = '#9b59b6';
-});
-button6.addEventListener('click', function() {
-    box.style.backgroundColor = '#1aa4bc';
-});
-button7.addEventListener('click', function() {
-    box.style.backgroundColor = '#eddf1a';
-});
+button1.addEventListener('click', function() { animateBox('rgba(52, 152, 219, 0.2)', 'rgba(52, 152, 219, 0.9)'); }); 
+button2.addEventListener('click', function() { animateBox('rgba(231, 76, 60, 0.2)', 'rgba(231, 76, 60, 0.9)'); }); 
+button3.addEventListener('click', function() { animateBox('rgba(46, 204, 113, 0.2)', 'rgba(46, 204, 113, 0.9)'); }); 
+button4.addEventListener('click', function() { animateBox('rgba(243, 156, 18, 0.2)', 'rgba(243, 156, 18, 0.9)'); }); 
+button5.addEventListener('click', function() { animateBox('rgba(155, 89, 182, 0.2)', 'rgba(155, 89, 182, 0.9)'); }); 
+button6.addEventListener('click', function() { animateBox('rgba(26, 164, 188, 0.2)', 'rgba(26, 164, 188, 0.9)'); }); 
+button7.addEventListener('click', function() { animateBox('rgba(237, 223, 26, 0.2)', 'rgba(237, 223, 26, 0.9)'); }); 
