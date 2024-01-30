@@ -1,28 +1,56 @@
-var button1 = document.getElementById('button1');
-var button2 = document.getElementById('button2');
-var button3 = document.getElementById('button3');
-var button4 = document.getElementById('button4');
-var button5 = document.getElementById('button5');
-var button6 = document.getElementById('button6');
-var button7 = document.getElementById('button7');
+function myMove2(Day2){
+    const days = new Array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+    let i, l;
+    for(i = 0, l = days.length; i < l; i++){
+        if(days[i] != Day2){
+            document.getElementById(days[i]).style.top = '-450px';
+            document.getElementById(days[i]).style.bottom = '-450px';
+            document.getElementById(days[i]).style.transition = 'all 0.5s';
+        }
+    }
+}
+let id = null;
+function myMove(day) {
 
-var box = document.getElementById('animated-box');
-
-function animateBox(backgroundColor, borderColor) {
-    box.style.top = '-150px';
-
-
-    setTimeout(function() {
-        box.style.backgroundColor = backgroundColor; 
-        box.style.borderColor = borderColor; 
-        box.style.top = '320px';
-    }, 800); 
+var elem = document.getElementById(day);   
+myMove2(day);
+let pos = -450;
+clearInterval(id);
+id = setInterval(frame, 5);
+function frame() {
+if (pos != 160) {
+document.getElementById(day).style.transition = 'all 0.9s';
+if(day == "Monday"){
+document.getElementById("Monday").style.borderColor = "blueviolet";
+document.getElementById("Monday").style.backgroundColor = "blueviolet";
+}else if(day == "Tuesday"){
+document.getElementById("Tuesday").style.borderColor = "violet";
+document.getElementById("Tuesday").style.backgroundColor = "violet";
+}else if(day == "Wednesday"){
+document.getElementById("Wednesday").style.borderColor = "blue";
+document.getElementById("Wednesday").style.backgroundColor = "blue";
+}else if(day == "Thursday"){
+document.getElementById("Thursday").style.borderColor = "greenyellow";
+document.getElementById("Thursday").style.backgroundColor = "greenyellow";
+}else if(day == "Friday"){
+document.getElementById("Friday").style.borderColor = "yellow";
+document.getElementById("Friday").style.backgroundColor = "yellow";
+}else if(day == "Saturday"){
+document.getElementById("Saturday").style.borderColor = "orange";
+document.getElementById("Saturday").style.backgroundColor = "orange";
+}else if(day == "Sunday"){
+document.getElementById("Sunday").style.borderColor = "red";
+document.getElementById("Sunday").style.backgroundColor = "red";
 }
 
-button1.addEventListener('click', function() { animateBox('rgba(52, 152, 219, 0.2)', 'rgba(52, 152, 219, 0.9)'); }); 
-button2.addEventListener('click', function() { animateBox('rgba(231, 76, 60, 0.2)', 'rgba(231, 76, 60, 0.9)'); }); 
-button3.addEventListener('click', function() { animateBox('rgba(46, 204, 113, 0.2)', 'rgba(46, 204, 113, 0.9)'); }); 
-button4.addEventListener('click', function() { animateBox('rgba(243, 156, 18, 0.2)', 'rgba(243, 156, 18, 0.9)'); }); 
-button5.addEventListener('click', function() { animateBox('rgba(155, 89, 182, 0.2)', 'rgba(155, 89, 182, 0.9)'); }); 
-button6.addEventListener('click', function() { animateBox('rgba(26, 164, 188, 0.2)', 'rgba(26, 164, 188, 0.9)'); }); 
-button7.addEventListener('click', function() { animateBox('rgba(237, 223, 26, 0.2)', 'rgba(237, 223, 26, 0.9)'); }); 
+pos++;
+pos++;
+elem.style.top = pos + 'px'; 
+elem.style.bottom = pos + 'px';
+} else {
+document.getElementById(day).style.backgroundColor = "white";
+clearInterval(id);	  
+
+}
+}
+}
