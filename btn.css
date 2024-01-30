@@ -1,6 +1,6 @@
 * {
+
     box-sizing: border-box;
-    background-color: #F5F5DC;
 }
 
 #Monday{
@@ -13,6 +13,7 @@
     background-color: blueviolet;
     transition: background-color 0.4s ease-in-out;
 }
+
 
 #Tuesday{
     width: 400px;
@@ -80,39 +81,68 @@
     transition: background-color 0.4s ease-in-out;
 }
 
-p{
-    margin-top: 2%;
-}
-/* Add this section for button styling */
 button {
     font-weight: 900;
     padding: 20px;
     display: block;
     border-radius: 30px;
-    width: 150px;
-    margin: 20px;
-    position: relative;
-    background-color: var(--button-color);
+    width: 250px;
+    margin: 30px;
+    margin-top: 10px;
+    position:relative;
+    background-color: var(--button-color); /* Dynamic button color */
     color: #F5F5DC;
     border: none;
     cursor: pointer;
     box-shadow: rgb(210, 204, 183) -3px 5px 5px;
     transition: box-shadow 0.4s ease-in-out;
+
 }
 
 button:hover {
-    font-size: 15px;
+    text-transform: lowercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
     scale: 1.1;
-    transition: all 0.5s ease-in-out;
     box-shadow: rgb(65, 39, 10) 0px 0px 0px;
+    padding: 20px;
+    width: 170px;
+    transition: all 0.5s ease-in-out;
 }
 
-/* Set button color dynamically based on box color */
+button:after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+}
+
+button:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: .75rem 3rem;
+        font-size: 1.25rem;
+    }
+}
+
 .button-1 { --button-color: blueviolet; }
-.button-2 { --button-color: violet; }
-.button-3 { --button-color: blue; }
-.button-4 { --button-color: greenyellow; }
-.button-5 { --button-color: yellow; }
+.button-2 { --button-color: rgb(215, 107, 152); }
+.button-3 { --button-color: rgb(38, 86, 206); }
+.button-4 { --button-color: rgb(57, 147, 69); }
+.button-5 { --button-color: rgb(230, 230, 76); }
 .button-6 { --button-color: orange; }
 .button-7 { --button-color: red; }
+
+.button-1:hover{ --button-color: rgb(85, 8, 86); }
+.button-2:hover{ --button-color: rgb(132, 7, 61); }
+.button-3:hover{ --button-color: rgb(7, 61, 132); }
+.button-4:hover{ --button-color: rgb(5, 105, 7); }
+.button-5:hover{ --button-color: rgb(227, 227, 9); }
+.button-6:hover{ --button-color: rgb(198, 97, 8); }
+.button-7:hover{ --button-color: rgb(152, 4, 4); }
