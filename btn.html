@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week Days Animation</title>
-<link rel="stylesheet" href="btn.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="btn.css">
 </head>
 <body>
+    <p>
+        <button class="button-1" onclick ="myMove('Monday')">Monday</button><br>
+		<button class="button-2" onclick ="myMove('Tuesday')"role="button">Tuesday</button><br>
+		<button class="button-3" onclick ="myMove('Wednesday')"role="button">Wednesday</button><br>
+		<button class="button-4" onclick ="myMove('Thursday')"role="button">Thursday</button><br>
+		<button class="button-5" onclick ="myMove('Friday')"role="button">Friday</button><br>
+		<button class="button-6" onclick ="myMove('Saturday')"role="button">Saturday</button><br>
+		<button class="button-7" onclick ="myMove('Sunday')"role="button">Sunday</button><br>
+    </p>
+        
+    <div id ="myContainer">
+        <div id ="Monday"></div>
+        <div id ="Tuesday"></div>
+        <div id ="Wednesday"></div>
+        <div id ="Thursday"></div>
+        <div id ="Friday"></div>
+        <div id ="Saturday"></div>
+        <div id ="Sunday"></div>
 
-<div id="buttons-container">
-  <button class="day-button" id="button1" onclick="animateBox('Monday')">Monday</button>
-  <button class="day-button" id="button2" onclick="animateBox('Tuesday')">Tuesday</button>
-  <button class="day-button" id="button3" onclick="animateBox('Wednesday')">Wednesday</button>
-  <button class="day-button" id="button4" onclick="animateBox('Thursday')">Thursday</button>
-  <button class="day-button" id="button5" onclick="animateBox('Friday')">Friday</button>
-  <button class="day-button" id="button6" onclick="animateBox('Saturday')">Saturday</button>
-  <button class="day-button" id="button7" onclick="animateBox('Sunday')">Sunday</button>
-</div>
-
-<div id="animated-box"></div>
-
-<script src="btn.js"></script>
+        </div>
+    </div>
+    <script src="btn.js"></script>
 </body>
 </html>
